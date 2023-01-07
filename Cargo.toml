@@ -1,0 +1,28 @@
+[package]
+name = "python"
+version = "0.0.1"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[profile.release]
+debug = true
+
+[dependencies]
+smol_str = "0.1.21"
+num-bigint = "0.4.2"
+rustpython-parser = { git = "https://github.com/RustPython/RustPython.git" }
+smartstring = "0.2.9"
+indoc = "1.0.3"
+parking_lot = "0.11.1"
+rand = "0.8.4"
+bit_reverse = "0.1.8"
+lexical = "6.0.1"
+maplit = "1.0.2"
+
+[dev-dependencies]
+criterion = { version = "0.3.5", features = ["html_reports"] }
+
+[[bench]]
+name = "basic"
+harness = false
